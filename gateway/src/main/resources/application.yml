@@ -1,0 +1,42 @@
+spring: 
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: CashbackMS
+          uri: lb://CashbackMS
+          predicates:
+            - Path=/cashback/**
+        - id: ManageUsersMS
+          uri: lb://ManageUsersMS
+          predicates:
+            - Path=/customer/**
+        - id: OfferMS
+          uri: lb://OfferMS
+          predicates:
+            - Path=/offers/**
+        - id: PayBillMS
+          uri: lb://PayBillMS
+          predicates:
+            - Path=/paybill/**
+        - id: TransactionMS
+          uri: lb://TransactionMS
+          predicates:
+            - Path=/transaction/**
+        - id: TransferMS
+          uri: lb://TransferMS
+          predicates:
+            - Path=/offers/**
+        - id: TransferMS
+          uri: lb://TransferMS
+          predicates:
+            - Path=/tranfer/**
+        - id: WalletMS
+          uri: lb://WalletMS
+          predicates:
+            - Path=/wallet/**
+        
+         
+      
