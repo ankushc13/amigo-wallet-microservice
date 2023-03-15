@@ -1,0 +1,22 @@
+server:
+  port: 9700
+  
+spring:
+  application:
+    name: CashbackMS
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        hostname: localhost
+      config:
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        data-key: data
+        profileSeparator: '::'
+        format: YAML
+        
+      
+
+     
