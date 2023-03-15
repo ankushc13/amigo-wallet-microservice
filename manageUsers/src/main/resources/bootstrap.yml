@@ -1,0 +1,22 @@
+server:
+  port: 9100
+  
+spring:
+  application:
+    name: ManageUsersMS
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        hostname: localhost
+      config:
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        data-key: data
+        profileSeparator: '::'
+        format: YAML
+        
+      
+
+     
