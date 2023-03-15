@@ -1,0 +1,42 @@
+[
+        {
+                "key": "config/CashbackMS/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6IAogICAgdXJsOiBqZGJjOm15c3FsOi8vbG9jYWxob3N0OjMzMDYvbWFuYWdlX3VzZXJzP2NyZWF0ZURhdGFiYXNlSWZOb3RFeGlzdD10cnVl"
+        },
+        {
+                "key": "config/ManageUsersMS/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6IAogICAgdXJsOiBqZGJjOm15c3FsOi8vbG9jYWxob3N0OjMzMDYvbWFuYWdlX3VzZXJzP2NyZWF0ZURhdGFiYXNlSWZOb3RFeGlzdD10cnVl"
+        },
+        {
+                "key": "config/OfferMS/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6IAogICAgdXJsOiBqZGJjOm15c3FsOi8vbG9jYWxob3N0OjMzMDYvbWFuYWdlX29mZmVycz9jcmVhdGVEYXRhYmFzZUlmTm90RXhpc3Q9dHJ1ZQ=="
+        },
+        {
+                "key": "config/PayBillMS/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6IAogICAgdXJsOiBqZGJjOm15c3FsOi8vbG9jYWxob3N0OjMzMDYvcGF5X2JpbGxfZGI/Y3JlYXRlRGF0YWJhc2VJZk5vdEV4aXN0PXRydWU="
+        },
+        {
+                "key": "config/TransactionMS/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6IAogICAgdXJsOiBqZGJjOm15c3FsOi8vbG9jYWxob3N0OjMzMDYvdHJhbnNhY3Rpb25fZGI/Y3JlYXRlRGF0YWJhc2VJZk5vdEV4aXN0PXRydWU="
+        },
+        {
+                "key": "config/TransferMS/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6IAogICAgdXJsOiBqZGJjOm15c3FsOi8vbG9jYWxob3N0OjMzMDYvdHJhbnNmZXI/Y3JlYXRlRGF0YWJhc2VJZk5vdEV4aXN0PXRydWU="
+        },
+        {
+                "key": "config/WalletMS/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6IAogICAgdXJsOiBqZGJjOm15c3FsOi8vbG9jYWxob3N0OjMzMDYvd2FsbGV0X2RiP2NyZWF0ZURhdGFiYXNlSWZOb3RFeGlzdD10cnVl"
+        },
+        {
+                "key": "config/application/data",
+                "flags": 0,
+                "value": "c3ByaW5nOgogIGRhdGFzb3VyY2U6CiAgICBkcml2ZXJDbGFzc05hbWU6IGNvbS5teXNxbC5qZGJjLkRyaXZlcgogICAgdXNlcm5hbWU6ICJyb290IgogICAgcGFzc3dvcmQ6ICJAQW5rdXNoMTIzIgogIGpwYToKICAgIHNob3ctc3FsOiB0cnVlCiAgICBwcm9wZXJ0aWVzOgogICAgICBoaWJlcm5hdGU6CiAgICAgICAgZm9ybWF0X3NxbDogdHJ1ZQogICAgaGliZXJuYXRlOgogICAgICBkZGwtYXV0bzogdXBkYXRlCm1hbmFnZW1lbnQ6CiAgZW5kcG9pbnQ6CiAgICBoZWFsdGg6CiAgICAgIHNob3ctZGV0YWlsczogIkFMV0FZUyIKICBlbmRwb2ludHM6CiAgICB3ZWI6CiAgICAgIGV4cG9zdXJlOgogICAgICAgIGluY2x1ZGU6ICIqIg=="
+        }
+]

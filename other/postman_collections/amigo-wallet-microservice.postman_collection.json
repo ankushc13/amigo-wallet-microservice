@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "81ba7a72-be13-4b11-b3c8-ce919f929012",
+		"name": "amigo-wallet-microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14817653"
+	},
+	"item": [
+		{
+			"name": "manage users",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ankush Chauhan\",\r\n    \"email\": \"abc@cbz.com\",\r\n    \"password\": \"zxcvb\",\r\n    \"mobileNumber\": 9876543210\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/customer",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login (admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const token = pm.response.headers.get('token');\r",
+									"console.log(token);\r",
+									"pm.environment.set(\"token\",token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abc@abc.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/customer/login",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login (customer)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const token = pm.response.headers.get('token');\r",
+									"console.log(token);\r",
+									"pm.environment.set(\"token\",token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abc@cbz.com\",\r\n    \"password\": \"zxcvb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/customer/login",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abc@abc.com\",\r\n    \"currentPassword\": \"password\",\r\n        \"newPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/customer/change-password",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"customer",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abc@abc.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/customer/reset-password",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"customer",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wallet",
+			"item": [
+				{
+					"name": "load wallet",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gateway}}/wallet/load",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"wallet",
+								"load"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add bank",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankCode\": \"ABCD123456\",\r\n    \"holderName\": \"Ankush\",\r\n    \"accountNumber\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/wallet/add-bank",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"wallet",
+								"add-bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankCode\": \"ABCD123456\",\r\n    \"holderName\": \"Ankush\",\r\n    \"accountNumber\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/wallet/topup/100",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"wallet",
+								"topup",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "show transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gateway}}/transaction/page/4",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"transaction",
+								"page",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "manage offers",
+			"item": [
+				{
+					"name": "add offer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"offerCode\": \"ABC35\",\r\n    \"offerAmount\": 35\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/offers/add",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"offers",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gateway}}/offers/all",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"offers",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transfer",
+			"item": [
+				{
+					"name": "tranfer to bank",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankCode\": \"ABCD123789\",\r\n    \"holderName\": \"Messi\",\r\n    \"accountNumber\": \"456456\",\r\n    \"amount\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/tranfer/bank",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"tranfer",
+								"bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tranfer to wallet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\": \"ghi@abc.com\",\r\n    \"walletAmount\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/tranfer/wallet",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"tranfer",
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pay bill",
+			"item": [
+				{
+					"name": "get merchant",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gateway}}/paybill/merchant/load",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"paybill",
+								"merchant",
+								"load"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay bill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"JIO\",\r\n    \"utilityType\": \"mobile bill payment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/paybill",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"paybill"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cashback",
+			"item": [
+				{
+					"name": "cashback",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway}}/cashback/13/ABC10",
+							"host": [
+								"{{gateway}}"
+							],
+							"path": [
+								"cashback",
+								"13",
+								"ABC10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
